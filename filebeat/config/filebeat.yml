@@ -29,8 +29,8 @@ filebeat.prospectors:
 #----------------------------- Logstash output --------------------------------
 output.logstash:
   hosts: ["192.168.1.43:5044"]
-  username: "logstash"
-  password: "logstash"
+  #username: "logstash_system"
+  #password: "elastic"
   #send data with the specific format with codecs
   #codec.format :
   #  string:  '%{[@timestamp]} %{[@message]}'

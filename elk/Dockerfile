@@ -1,11 +1,14 @@
-FROM sebp/elk
+FROM sebp/elkx
 
 RUN /opt/logstash/bin/logstash-plugin install logstash-input-beats && \
     /opt/elasticsearch/bin/elasticsearch-plugin install ingest-geoip
 
+
 ## Installation de X-PACK
 # RUN /opt/elasticsearch/bin/elasticsearch-plugin install x-pack && \
 #       /opt/kibana/bin/kibana-plugin install x-pack
+
+RUN chown kibana:kibana /opt/kibana/config/kibana.yml 
 
 ## Confguration de X-PACK
 # RUN chown elasticsearch:elasticsearch /etc/elasticsearch/elasticsearch.keystore
