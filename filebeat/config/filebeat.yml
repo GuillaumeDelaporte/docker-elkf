@@ -29,15 +29,15 @@ filebeat.prospectors:
 #----------------------------- Logstash output --------------------------------
 output.logstash:
   hosts: ["192.168.1.43:5044"]
-  #username: "logstash_system"
-  #password: "elastic"
+  username: "logstash_system"
+  password: "elastic"
   #send data with the specific format with codecs
   #codec.format :
   #  string:  '%{[@timestamp]} %{[@message]}'
 
   # Optional SSL. By default is off.
   # List of root certificates for HTTPS server verifications
-  #ssl.certificate_authorities: ["/etc/pki/tls/certs/logstash-beats.crt"]
+  ssl.certificate_authorities: ["/etc/pki/tls/certs/logstash-beats.crt"]
 
   # Certificate for SSL client authentication
   #ssl.certificate: "/etc/pki/client/cert.pem"

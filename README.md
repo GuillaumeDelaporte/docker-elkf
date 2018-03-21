@@ -53,6 +53,24 @@ $ docker-compose up -d
 $ docker-compose stop
 ```
 --------------
+
+
+## Générer des clés par la connexion SSL
+
+
+## Tests
+
+##### Test la connectivité entre filebeat et Logstash
+
+```
+$ filebeat -c filebeat.yml -e -v
+```
+## Test d'authentification Elasticsearch (x-pack)
+
+```
+$ curl -u kibana:elastic http://localhost:9200/_xpack
+
+```
 ## Quelques erreurs rencontrées fréquemment
 
 ### 1. Problème de démmarage de Elasticsearch

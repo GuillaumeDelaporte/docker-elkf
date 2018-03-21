@@ -16,7 +16,7 @@ services:
       - "./elk/logstash/conf.d:/etc/logstash/conf.d"
       #- ./elk/logstash/pipeline:/usr/share/logstash/pipeline: ro
       #- "./elk/kibana/config/kibana.yml:/opt/kibana/config/kibana.yml"
-      #- "./elk/logstash/certs/logstash-beats.crt:/etc/pki/tls/certs/logstash-beats.crt"
+      - "./elk/logstash/certs/logstash-beats.crt:/etc/pki/tls/certs/logstash-beats.crt"
     restart: always
     networks:
       - net
@@ -27,7 +27,7 @@ services:
       - KIBANA_PASSWORD=elastic
       - LOGSTASH_USER=logstash_system
       - LOGSTASH_PASSWORD=elastic
-  
+
   filebeat:
       build:
         context: ./filebeat
