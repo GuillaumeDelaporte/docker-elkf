@@ -55,9 +55,15 @@ $ docker-compose stop
 --------------
 
 
-## Générer des clés par la connexion SSL
+## COnfigure le mot de passe de Kibana (x-pack)
 
+```
+$ curl -u elastic -XPUT -H 'Content-Type: application/json' 'http://localhost:9200/_xpack/security/user/kibana/_password' -d '{ "password":new-kibana-password" }'
 
+```
+Enter host password for user 'elastic': `elastic password`
+
+echo elastic |  curl -u elastic -XPUT -H 'Content-Type: application/json' 'http://localhost:9200/_xpack/security/user/kibana/_password' -d '{ "elastic":elastic" }'
 ## Tests
 
 ##### Test la connectivité entre filebeat et Logstash

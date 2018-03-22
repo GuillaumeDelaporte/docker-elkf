@@ -37,7 +37,7 @@ output.logstash:
 
   # Optional SSL. By default is off.
   # List of root certificates for HTTPS server verifications
-  ssl.certificate_authorities: ["/etc/pki/tls/certs/logstash-beats.crt"]
+  #ssl.certificate_authorities: ["/etc/pki/tls/certs/logstash-beats.crt"]
 
   # Certificate for SSL client authentication
   #ssl.certificate: "/etc/pki/client/cert.pem"

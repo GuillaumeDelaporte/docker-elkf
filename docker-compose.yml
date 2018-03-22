@@ -15,22 +15,23 @@ services:
       - "./elk/logstash/config/logstash.yml:/opt/logstash/config/logstash.yml"
       - "./elk/logstash/conf.d:/etc/logstash/conf.d"
       #- ./elk/logstash/pipeline:/usr/share/logstash/pipeline: ro
-      #- "./elk/kibana/config/kibana.yml:/opt/kibana/config/kibana.yml"
-      - "./elk/logstash/certs/logstash-beats.crt:/etc/pki/tls/certs/logstash-beats.crt"
+      - "./elk/kibana/config/kibana.yml:/opt/kibana/config/kibana.yml"
+      #- "./elk/logstash/certs/logstash-beats.crt:/etc/pki/tls/certs/logstash-beats.crt"
     restart: always
     networks:
       - net
     environment:
-      - ELASTICSEARCH_USER=elastic
-      - ELASTICSEARCH_PASSWORD=elastic
-      - KIBANA_USER=kibana
-      - KIBANA_PASSWORD=elastic
-      - LOGSTASH_USER=logstash_system
-      - LOGSTASH_PASSWORD=elastic
+      - ELASTIC_BOOTSTRAP_PASSWORD=elastic
+      # - ELASTICSEARCH_USER=elastic
+      # - ELASTICSEARCH_PASSWORD=elastic
+      # - KIBANA_USER=kibana
+      # - KIBANA_PASSWORD=elastic
+      # - LOGSTASH_USER=logstash_system
+      # - LOGSTASH_PASSWORD=elastic
 
   filebeat:
       build:
-        context: ./filebeat
+        context: ./filebeat 
       volumes:
         - "./filebeat/config/filebeat.yml:/usr/share/filebeat/filebeat.yml"
         - "./openio/log/oio/sds/OPENIO:/var/log/oio/sds/OPENIO"
