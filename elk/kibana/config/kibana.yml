@@ -1,3 +1,4 @@
+
 # Default Kibana 5 file from https://github.com/elastic/kibana/blob/master/config/kibana.yml
 #
 # Kibana is served by a back end server. This setting specifies the port to use.

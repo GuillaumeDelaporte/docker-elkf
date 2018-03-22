@@ -15,7 +15,7 @@ download="$basecommande download"
 
 
 
-for (( c=1; c<=100; c++ ))
+for (( c=1; c<=50; c++ ))
 do
    #create a container with a random name
    id=`cat /dev/urandom | tr -dc '0-9' | fold -w 256 | head -n 1 | sed -e 's/^0*//' | head --bytes 3`
@@ -35,7 +35,7 @@ do
    #delete one file  among uploaded
    $delete $repo $file
    echo "[DELETE] $file --> $repo"
-   
+
 done
 
 #print stat, auth and list

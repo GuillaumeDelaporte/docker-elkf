@@ -11,6 +11,31 @@
 # https://www.elastic.co/guide/en/elasticsearch/reference/index.html
 #
 # ---------------------------------- X-PACK -----------------------------------
+# xpack.notification.slack:
+#   account:
+#     monitoring:
+#       url: https://hooks.slack.com/services/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
+#       message_defaults:
+#         from: x-pack
+#         to: ["@papebadiane"]
+#         attachment:
+#           fallback: "X-Pack Notification"
+#           color: "#36a64f"
+#           title: "X-Pack Notification"
+#           title_link: "https://www.elastic.co/guide/en/x-pack/current/index.html"
+#           text: "One of your watches generated this notification."
+#     account:
+#       openioteam:
+#         url: https://hooks.slack.com/services/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
+#         message_defaults:
+#           from: watcher
+# watcher.actions.slack.service:
+#   default_account: openioteam
+#   account:
+#     openioteam:
+#       url: https://hooks.slack.com/services/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
+#       message_defaults:
+#         from: watcher
 #action.auto_create_index: .security,.monitoring*,.watches,.triggered_watches,.watcher-history*,.ml*,logs-*,access-*
 # ---------------------------------- Cluster -----------------------------------
 #

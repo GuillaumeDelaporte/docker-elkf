@@ -3,6 +3,6 @@ COPY config/filebeat.yml /usr/share/filebeat/filebeat.yml
 USER root
 RUN mkdir -p /var/log/oio/sds/OPENIO
 
-RUN chown filebeat /usr/share/filebeat/filebeat.yml
+RUN chown filebeat:filebeat /usr/share/filebeat/filebeat.yml
 RUN chmod go-w /usr/share/filebeat/filebeat.yml
 USER filebeat
